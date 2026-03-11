@@ -1,24 +1,39 @@
 #include <iostream>
 #include "StringUtil.h"
 
-
 using namespace std;
-
-
-
 
 
 int main()
 {
-	int A = 10;
-	char Temp[100] = "Hello World";
+	//heap 동적으로 int 사이즈 만들고 주소 반환
+	int* MyTexture = new int;
 
-	int StringLength = Length(Temp, 100);
-	cout << StringLength << endl;
+	//포인터 변수의 주소의 heap 영역 반환
+	delete MyTexture;
+	MyTexture = nullptr;
+	if (MyTexture)
+	{
+	
+	}
 
-	Replace(Temp, 100, 'l', 'f');
+	int Size = 100;
+	//heap 동적으로 int 100개짜리 배열 사이즈 만들고 주소 반환
+	int* MyStaticMesh = new int[Size];
 
-	cout << Temp << endl;
+	MyStaticMesh[3] = 10;
+	//포인터 변수의 주소의 heap 영역 반환
+	delete MyStaticMesh;
+	MyStaticMesh = nullptr;
+	if (MyStaticMesh)
+	{
+
+	}
+
+
+
+
+
 
 	return 0;
 }
