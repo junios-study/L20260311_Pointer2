@@ -4,17 +4,31 @@ using namespace std;
 
 int main()
 {
-	int A = 10;
+	int Number[5] = { 1, 2, 3, 4, 5 };
+	char Hello[6] = { 'H','e', '\0','l', 'l', 'o' };
+	//Number[0];
 
-	//P는 별명, 정수형 변수의 주소를 기억하는 숫자 공간을 요청
-	int* P = &A; // A 변수에 주소를 주세요, 정수형 변수A의 주소를 주세요.
+	Hello[0] = 'J';
 
-	//P2는 별명, 정수형 변수의 주소를 기억하는 숫자 공간을 요청
-	int* P2 = P;
+	cout << Number[1] << endl;
 
-	*P = A + 10;
+	int* P = Number;
+	char* C = Hello;
 
-	cout << *P2 << endl; //-> P라는 변수는 몬지 모르지만 다른 변수의 위치를 기억하는 변수
+	Hello[3] = 'A';
+	//cout << *(P + 1) << endl;
+	//cout << *(Number+1) << endl;
+	//cout << *(C + 0) << endl;
+	Console.WriteLine << C << endl;
+	for (int i = 0; i < 6; i++)
+	{
+		if (C[i] == '\0')
+		{
+			break;
+		}
+		cout << C[i];
+	}
+
 
 
 	return 0;
