@@ -6,41 +6,36 @@ using namespace std;
 
 int main()
 {
-	malloc(10);
+	//숫자 입력 받아서 그걸 (SIZE)크기로 숫자 배열을 만들어서
+	//1부터 크기까지 초기화 하고 출력하는 프로그램 만들어 보세요.
+	int Size = 0;
+	int* P = nullptr;
 
-	free();
-	//compnter memory unmanaged language / human managed language
-	//heap 동적으로 int 사이즈 만들고 주소 반환
-	int* MyTexture = new int;
+	cin >> Size;
 
-	//포인터 변수의 주소의 heap 영역 반환
-	delete MyTexture;
-	MyTexture = nullptr;
-	if (MyTexture)
-	{
+	//heap 배열을 size 크기 만큼 int, 시작 번지(int*)
+	P = new int[Size];
 	
-	}
-
-	int Size = 100;
-	//heap 동적으로 int 100개짜리 배열 사이즈 만들고 주소 반환
-	int* MyStaticMeshes = new int[Size];
-
-	MyStaticMeshes[3] = 10;
-
-	//포인터 변수의 주소 부터 할당 받은 배열 크기 만큼의 heap 영역 반환
-	//delete MyStaticMeshes; 첫번째만 반환하고 나머지는 잊어버림
-	delete[] MyStaticMeshes;
-	MyStaticMeshes = nullptr;
-	if (MyStaticMeshes)
+	if (!P)  // if (P == nullptr) , if  ( P == 0)
 	{
-
+		return -1;
 	}
 
+	for (int i = 0; i < Size; ++i)
+	{
+		P[i] = i + 1;
+	}
+
+	for (int i = 0; i < Size; ++i)
+	{
+		cout << *(P + i) << ", ";
+	}
+	cout << endl;
+
+	//heap에 있는 배열을 반환해주세요.
+	delete[] P;
+	P = nullptr;
 
 
-
-
-
-	return 0;
 }
 
